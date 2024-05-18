@@ -8,15 +8,13 @@ pipeline {
     }
 
     stages {
-        stage('Cleanup Docker Images') {
+        stage('Cleanup Docker Containers') {
             steps {
                 script {
                     sh 'docker rm -f imagecapdb model-service imagecap-service imagecapapp || true'
                 }
             }
         }
-
-        
 
         stage('Github Checkout') {
             steps {
@@ -26,14 +24,12 @@ pipeline {
             }
         }
 
-
         stage('Build Docker Images') {
             steps {
                 script {
-                    docker.build('abhipsapanda/backend', './imagecaptioning')
-                    docker.build('abhipsapanda/frontend', './icfe')
-                    docker.build('abhipsapanda/modelbe1', './model')
-
+                    sh 'docker build -t abhipsapanda/backend ./imagecaptioning'
+                    sh 'docker build -t abhipsapanda/frontend ./icfe'
+                    sh 'docker build -t abhipsapanda/modelbe1 ./model'
                 }
             }
         }
@@ -66,6 +62,4 @@ pipeline {
             }
         }
     }
-
-    
 }
