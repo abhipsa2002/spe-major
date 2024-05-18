@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  imagecapdb:
+    image: mysql
+    ports:
+      - "3307:3306"  # Ensure MySQL is accessible on localhost:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: Abhipsa2002@
+      MYSQL_DATABASE: imagecaptioning
+    volumes:
+      - imagecapdb_data:/var/lib/mysql
+    networks:
+      - ic-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      retries: 5
+      timeout: 60s
+
+  model-service:
+    image: abhipsapanda/modelbe1
+    ports:
+      - "8060:8060"
+    networks:
+      - ic-network
+    restart: on-failure:1
+
+  imagecap-service:
+    image: abhipsapanda/backend
+    ports:
+      - "8020:8020"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://imagecapdb:3306/imagecaptioning?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Abhipsa2002@
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: true
+      MODEL_SERVICE_URL: http://model-service:8060/predict/
+    volumes:
+      - logs:/logs
+    depends_on:
+      imagecapdb:
+        condition: service_healthy
+      model-service:
+        condition: service_started
+    networks:
+      - ic-network
+    restart: on-failure:1
+
+  imagecapapp:
+    image: abhipsapanda/frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - imagecap-service
+    networks:
+      - ic-network
+
+networks:
+  ic-network:
+
+volumes:
+  imagecapdb_data:
+  logs:
+
