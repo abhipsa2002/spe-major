@@ -30,9 +30,10 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 script {
-                    docker.build('rishithaiiitb/bemodel', './model')
-                    docker.build('rishithaiiitb/backend', './imagecaptioning')
-                    docker.build('rishithaiiitb/frontend', './icfe')
+                    docker.build('abhipsapanda/backend', './imagecaptioning')
+                    docker.build('abhipsapanda/frontend', './icfe')
+                    docker.build('abhipsapanda/modelbe1', './model')
+
                 }
             }
         }
