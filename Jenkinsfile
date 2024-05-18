@@ -37,7 +37,7 @@ pipeline {
         stage('Push Docker Images') {
             steps {
                 script {
-                    docker.withRegistry('', "${DOCKERHUB_CREDENTIALS}") {
+                    withDockerRegistry([credentialsId: "${DOCKERHUB_CREDENTIALS}"]) {
                         sh 'docker tag abhipsapanda/frontend abhipsapanda/frontend:latest'
                         sh 'docker push abhipsapanda/frontend:latest'
 
