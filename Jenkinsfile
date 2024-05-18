@@ -16,6 +16,14 @@ pipeline {
             }
         }
 
+        stage('Maven Build') {
+            steps {
+                dir('./imagecaptoning') {
+                    sh 'mvn clean install'
+                }
+            }
+        }
+
         stage('Github Checkout') {
             steps {
                 script {
