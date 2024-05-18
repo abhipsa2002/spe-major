@@ -1,0 +1,41 @@
+---
+- name: Deploy Docker Compose stack
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Install Docker Compose
+      apt:
+        name: docker-compose
+        state: present
+
+    - name: Pull Frontend Image
+      docker_image:
+        name: abhipsapanda/frontend
+        source: pull
+
+    - name: Pull Backend Image
+      docker_image:
+        name: abhipsapanda/backend
+        source: pull
+
+    - name: Pull Model Service Image
+      docker_image:
+        name: abhipsapanda/modelbe1
+        source: pull
+
+    - name: Copy Docker Compose file to host
+      copy:
+        src: /var/lib/jenkins/workspace/spemodel/docker-compose.yml
+        dest: /opt/docker-compose.yml
+
+    - name: Start Docker Compose stack
+      command: docker-compose up -d
+      args:
+        chdir: /opt/
