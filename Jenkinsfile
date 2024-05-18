@@ -16,18 +16,20 @@ pipeline {
             }
         }
 
-        stage('Maven Build') {
-            steps {
-                dir('./imagecaptioning') {
-                    sh 'mvn clean install'
-                }
-            }
-        }
+        
 
         stage('Github Checkout') {
             steps {
                 script {
                     git branch: 'main', url: "${GITHUB_REPO_URL}"
+                }
+            }
+        }
+
+        stage('Maven Build') {
+            steps {
+                dir('./imagecaptioning') {
+                    sh 'mvn clean install'
                 }
             }
         }
