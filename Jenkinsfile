@@ -26,13 +26,6 @@ pipeline {
             }
         }
 
-        stage('Maven Build') {
-            steps {
-                dir('./imagecaptioning') {
-                    sh 'mvn clean install'
-                }
-            }
-        }
 
         stage('Build Docker Images') {
             steps {
