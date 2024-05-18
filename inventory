@@ -1,0 +1,3 @@
+
+[host1]
+localhost ansible_user=abhipsa ansible_sudo_pass='Abhipsa2002@'
