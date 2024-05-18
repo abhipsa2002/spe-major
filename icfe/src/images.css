@@ -1,0 +1,58 @@
+.caption-heading {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: rgb(220, 31, 107);
+  }
+
+.past-images {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    margin-right: 10px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .image-cell img {
+    max-width: 400px; 
+    max-height: 400px; 
+    border-radius: 5px; 
+  }
+  
+  
+  .image-cell {
+    padding: 10px;
+  }
+
+  .created-at-column {
+    width: 100px; 
+  }
+
+  .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    align-items: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db; 
+    color: #fff; 
+    cursor: pointer;
+  }
+
+  .back-button:hover {
+    background-color: #2980b9; 
+  }

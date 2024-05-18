@@ -1,0 +1,78 @@
+.prediction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .prediction-heading {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: rgb(220, 31, 107);
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .image-preview {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 5px;
+  }
+  
+  .predict-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db; 
+    color: #fff; 
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .predict-button:hover {
+    background-color: #2980b9; 
+  }
+  
+  .caption-container {
+    padding: 10px;
+    border: 1px solid #ea83d4;
+    width: 80%;
+    justify-content: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .caption-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-left: 10%;
+    color: royalblue;
+  }
+
+  .back-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dd8ff2; 
+    color: #fff; 
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .back-button:hover {
+    background-color: #bd63ee;
+  }
+  
+  

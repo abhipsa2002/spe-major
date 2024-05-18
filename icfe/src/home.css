@@ -1,0 +1,90 @@
+.homepage {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 100px; 
+    height: auto; 
+  }
+  
+  .logout-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 30px;
+  }
+
+  .header button:hover{
+    background-color: rgba(77, 3, 3, 0.839);
+  }
+  
+  .employee-course-container {
+    display: flex;
+    gap: 30px; 
+  }
+  
+  .employee-section{
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-left: 30px;
+  }
+  .course-section {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-right: 30px;
+  }
+  
+  .employee-section,
+.course-section {
+  background-color: #f0f0f0;
+}
+
+  
+  
+  .employee-section h1,
+  .course-section h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: #e73872;
+  }
+
+  .employee-section p,
+  .course-section p {
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
+  
+  .employee-section button,
+  .course-section button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .employee-section button:hover,
+  .course-section button:hover {
+    background-color: #0056b3;
+  }
+  
