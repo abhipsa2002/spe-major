@@ -12,7 +12,6 @@ pipeline {
             steps {
                 script {
                     sh 'docker rm -f imagecapdb model-service imagecap-service imagecapapp || true'
-                    sh 'docker rmi -f abhipsapanda/modebe1 abhipsapanda/backend abhipsapanda/frontend || true'
                 }
             }
         }
