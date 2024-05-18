@@ -1,0 +1,5 @@
+django
+pillow
+transformers
+torch
+huggingface_hub
