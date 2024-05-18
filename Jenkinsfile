@@ -18,7 +18,7 @@ pipeline {
 
         stage('Maven Build') {
             steps {
-                dir('./imagecaptoning') {
+                dir('./imagecaptioning') {
                     sh 'mvn clean install'
                 }
             }
