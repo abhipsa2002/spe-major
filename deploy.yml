@@ -1,5 +1,5 @@
 ---
-- name: Deploy Docker Compose stack
+- name: Deploy Docker Compose Stack
   hosts: all
   become: true
 
@@ -17,33 +17,50 @@
 
     - name: Cleanup existing Docker containers
       shell: |
-        docker rm -f imagecapdb model-service imagecap-service imagecapapp || true
+        docker rm -f imagecapdb imagecap-service model-service imagecapapp || true
 
-    - name: Cleanup existing Docker images
+    - name: Cleanup specific Docker images
       shell: |
-        docker rmi -f abhipsapanda/modelbe1 abhipsapanda/backend abhipsapanda/frontend || true
+        docker images -q rishithaiiitb/bemodel rishithaiiitb/backend rishithaiiitb/frontend | xargs -r docker rmi -f || true
+
+    - name: Prune unused Docker images
+      shell: docker image prune -f
+
+    - name: Check if /ic directory exists
+      stat:
+        path: /ic
+      register: ic_directory
+
+    - name: Create Docker Compose working directory if it does not exist
+      file:
+        path: /ic
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+      when: ic_directory.stat.exists == False
+
+    - name: Copy Docker Compose file to host
+      copy:
+        src: /var/lib/jenkins/workspace/ImageCaptioning/docker-compose.yml
+        dest: /ic/docker-compose.yml
 
     - name: Pull Model Service Image
       docker_image:
-        name: abhipsapanda/modelbe1
+        name: rishithaiiitb/bemodel
         source: pull
 
     - name: Pull Backend Image
       docker_image:
-        name: abhipsapanda/backend
+        name: rishithaiiitb/backend
         source: pull
 
     - name: Pull Frontend Image
       docker_image:
-        name: abhipsapanda/frontend
+        name: rishithaiiitb/frontend
         source: pull
 
-    - name: Copy Docker Compose file to host
-      copy:
-        src: /var/lib/jenkins/workspace/spedemo/docker-compose.yml
-        dest: /opt/docker-compose.yml
-
-    - name: Start Docker Compose stack
+    - name: Start Docker Compose Stack
       command: docker-compose up -d
       args:
-        chdir: /opt/
+        chdir: /ic/
