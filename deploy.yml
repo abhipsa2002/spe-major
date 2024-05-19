@@ -21,7 +21,7 @@
 
     - name: Cleanup specific Docker images
       shell: |
-        docker images -q rishithaiiitb/bemodel rishithaiiitb/backend rishithaiiitb/frontend | xargs -r docker rmi -f || true
+        docker images -q abhipsapanda/modelbe1 abhipsapanda/backend abhipsapanda/frontend | xargs -r docker rmi -f || true
 
     - name: Prune unused Docker images
       shell: docker image prune -f
@@ -47,17 +47,17 @@
 
     - name: Pull Model Service Image
       docker_image:
-        name: rishithaiiitb/bemodel
+        name: abhipsapanda/modelbe1
         source: pull
 
     - name: Pull Backend Image
       docker_image:
-        name: rishithaiiitb/backend
+        name: abhipsapanda/backend
         source: pull
 
     - name: Pull Frontend Image
       docker_image:
-        name: rishithaiiitb/frontend
+        name: abhipsapanda/frontend
         source: pull
 
     - name: Start Docker Compose Stack
