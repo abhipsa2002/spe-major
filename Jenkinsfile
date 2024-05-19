@@ -7,7 +7,7 @@ pipeline {
         GITHUB_REPO_URL = 'https://github.com/abhipsa2002/spe-major.git'
     }
 
-
+    stages {
         stage('Github Checkout') {
             steps {
                 script {
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     dir('imagecaptioning') {
-                    	sh 'mvn clean package'
+                        sh 'mvn clean package'
                         sh 'mvn clean install'
                     }
                 }
