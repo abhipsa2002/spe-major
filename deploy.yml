@@ -15,9 +15,17 @@
         name: docker-compose
         state: present
 
-    - name: Pull Frontend Image
+    - name: Cleanup existing Docker containers
+      shell: |
+        docker rm -f imagecapdb model-service imagecap-service imagecapapp || true
+
+    - name: Cleanup existing Docker images
+      shell: |
+        docker rmi -f abhipsapanda/modelbe1 abhipsapanda/backend abhipsapanda/frontend || true
+
+    - name: Pull Model Service Image
       docker_image:
-        name: abhipsapanda/frontend
+        name: abhipsapanda/modelbe1
         source: pull
 
     - name: Pull Backend Image
@@ -25,14 +33,14 @@
         name: abhipsapanda/backend
         source: pull
 
-    - name: Pull Model Service Image
+    - name: Pull Frontend Image
       docker_image:
-        name: abhipsapanda/modelbe1
+        name: abhipsapanda/frontend
         source: pull
 
     - name: Copy Docker Compose file to host
       copy:
-        src: /var/lib/jenkins/workspace/spemodel/docker-compose.yml
+        src: /var/lib/jenkins/workspace/spedemo/docker-compose.yml
         dest: /opt/docker-compose.yml
 
     - name: Start Docker Compose stack
