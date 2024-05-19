@@ -7,19 +7,22 @@ pipeline {
         GITHUB_REPO_URL = 'https://github.com/abhipsa2002/spe-major.git'
     }
 
-    stages {
-        stage('Cleanup Docker Containers') {
-            steps {
-                script {
-                    sh 'docker rm -f imagecapdb model-service imagecap-service imagecapapp || true'
-                }
-            }
-        }
 
         stage('Github Checkout') {
             steps {
                 script {
                     git branch: 'main', url: "${GITHUB_REPO_URL}"
+                }
+            }
+        }
+
+        stage('Build Backend with Maven') {
+            steps {
+                script {
+                    dir('imagecaptioning') {
+                    	sh 'mvn clean package'
+                        sh 'mvn clean install'
+                    }
                 }
             }
         }
