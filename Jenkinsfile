@@ -69,7 +69,7 @@ pipeline {
     post {
         always {
             script {
-                // Email notification configuration
+                sh 'docker logout'
                 emailext(
                     subject: "Pipeline Status: ${currentBuild.result}",
                     body: """Build Status: ${currentBuild.result}
