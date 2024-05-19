@@ -2,3 +2,25 @@
 2024-05-19 09:42:37.697 [main] ERROR com.spe.imagecaptioning.Service.UserService - No user found with given email
 2024-05-19 09:42:49.554 [main] ERROR com.spe.imagecaptioning.Service.UserService - No user found with given email
 2024-05-19 09:42:49.570 [main] ERROR com.spe.imagecaptioning.Service.UserService - No user found with given email
+2024-05-19 15:42:20.992 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Starting ImageCaptioningApplication using Java 17.0.10 with PID 12529 (/home/abhipsa/Desktop/speic/imagecaptioning/target/classes started by abhipsa in /home/abhipsa/Desktop/speic/imagecaptioning)
+2024-05-19 15:42:20.997 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-19 15:42:28.916 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Started ImageCaptioningApplication in 8.113 seconds (process running for 8.624)
+2024-05-19 15:42:28.922 [main] INFO  com.spe.imagecaptioning.Controller.UserController - Image captioning application started
+2024-05-19 15:42:34.300 [http-nio-8020-exec-1] INFO  com.spe.imagecaptioning.Controller.UserController - Register end-point called
+2024-05-19 15:42:34.300 [http-nio-8020-exec-1] ERROR com.spe.imagecaptioning.Service.UserService - User Details cannot be null
+2024-05-19 15:42:34.301 [http-nio-8020-exec-1] INFO  com.spe.imagecaptioning.Controller.UserController - Register response sent successfully
+2024-05-19 15:43:17.663 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Controller.UserController - Register end-point called
+2024-05-19 15:43:17.663 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Service.UserService - New user created
+2024-05-19 15:43:17.738 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Controller.UserController - Register response sent successfully
+2024-05-19 15:43:26.670 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Controller.UserController - Login end-point called
+2024-05-19 15:43:26.786 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Service.UserService - User found
+2024-05-19 15:43:26.890 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Service.UserService - Logged in successfully
+2024-05-19 15:43:26.890 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Controller.UserController - Login response sent successfully
+2024-05-19 15:44:44.299 [main] ERROR com.spe.imagecaptioning.Service.UserService - No user found with given email
+2024-05-19 15:44:44.319 [main] INFO  com.spe.imagecaptioning.Service.UserService - User found
+2024-05-19 15:44:44.386 [main] INFO  com.spe.imagecaptioning.Service.UserService - Logged in successfully
+2024-05-19 15:44:44.401 [main] ERROR com.spe.imagecaptioning.Service.UserService - No user found with given email
+2024-05-19 15:45:16.309 [main] ERROR com.spe.imagecaptioning.Service.UserService - No user found with given email
+2024-05-19 15:45:16.333 [main] INFO  com.spe.imagecaptioning.Service.UserService - User found
+2024-05-19 15:45:16.407 [main] INFO  com.spe.imagecaptioning.Service.UserService - Logged in successfully
+2024-05-19 15:45:16.415 [main] ERROR com.spe.imagecaptioning.Service.UserService - No user found with given email
