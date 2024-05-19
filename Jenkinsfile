@@ -65,18 +65,24 @@ pipeline {
             }
         }
     }
-
-    post {
+     post {
         always {
-            script {
-                sh 'docker logout'
-            }
+            // Send email notification for every build
             emailext(
                 subject: "Pipeline Status: ${currentBuild.result}",
-                body: "Build URL: ${BUILD_URL}\n\nStatus: ${currentBuild.result}",
+                body: "Build Status: ${currentBuild.result}\n\nCheck the Jenkins console for details.",
                 to: "pabhipsa02@gmail.com",
-                from: "smtp.gmail.com"
+                from: "smtp.gmail.com",
             )
+            script {
+                // Email notification configuration
+                emailext (
+                    subject: "Build ${currentBuild.fullDisplayName} ${currentBuild.result}",
+                    body: "Build URL: ${BUILD_URL}",
+                    to: "pabhipsa02@gmail.com", // Add your recipient email address here
+                    mimeType: 'text/html',
+                )
+            }
         }
     }
 }
