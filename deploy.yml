@@ -42,7 +42,7 @@
 
     - name: Copy Docker Compose file to host
       copy:
-        src: /var/lib/jenkins/workspace/ImageCaptioning/docker-compose.yml
+        src: /var/lib/jenkins/workspace/spedemo/docker-compose.yml
         dest: /ic/docker-compose.yml
 
     - name: Pull Model Service Image
