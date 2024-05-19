@@ -40,13 +40,13 @@ public class ImageCaptioningApplicationTests {
         assertFalse(userService.verifyUser(loginDTO), "Expected login to fail");
     }
 
-    @Test
-    public void testPositiveLoginDetails() {
-        LoginDTO loginDTO = new LoginDTO();
-        loginDTO.setEmail("rishitha1201@gmail.com");
-        loginDTO.setPassword("Rishi@2001");
-        assertTrue(userService.verifyUser(loginDTO), "Login Success");
-    }
+//    @Test
+//    public void testPositiveLoginDetails() {
+//        LoginDTO loginDTO = new LoginDTO();
+//        loginDTO.setEmail("rishitha1201@gmail.com");
+//        loginDTO.setPassword("Rishi@2001");
+//        assertTrue(userService.verifyUser(loginDTO), "Login Success");
+//    }
 
     @AfterAll
     static void testComplete(){

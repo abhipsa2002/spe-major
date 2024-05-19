@@ -7,5 +7,5 @@ com/spe/imagecaptioning/DTO/LoginDTO.class
 com/spe/imagecaptioning/Controller/UserController.class
 com/spe/imagecaptioning/Service/UserServiceImpl.class
 com/spe/imagecaptioning/ImageCaptioningApplication.class
-com/spe/imagecaptioning/Entity/User.class
 com/spe/imagecaptioning/DAO/UserDAO.class
+com/spe/imagecaptioning/Entity/User.class
