@@ -74,7 +74,7 @@ pipeline {
             emailext(
                 subject: "Pipeline Status: ${currentBuild.result}",
                 body: "Build URL: ${BUILD_URL}\n\nStatus: ${currentBuild.result}",
-                to: "rishichinnu27@gmail.com",
+                to: "pabhipsa02@gmail.com",
                 from: "jenkins@yourdomain.com"
             )
         }
