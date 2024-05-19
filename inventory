@@ -1,2 +1,2 @@
-[host1]
+[myhosts]
 localhost ansible_host=127.0.0.1 ansible_user=abhipsa ansible_ssh_pass=Abhipsa2002@ ansible_become_pass=Abhipsa2002@ ansible_ssh_common_args='-o StrictHostKeyChecking=no'
