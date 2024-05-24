@@ -17,7 +17,7 @@
 
     - name: Cleanup existing Docker containers
       shell: |
-        docker rm -f imagecapdb imagecap-service model-service imagecapapp || true
+        docker rm -f database model frontend backend || true
 
     - name: Cleanup specific Docker images
       shell: |
