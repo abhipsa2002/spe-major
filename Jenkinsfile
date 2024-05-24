@@ -77,11 +77,13 @@ pipeline {
                              Build URL: ${BUILD_URL}
                              <br><br>
                              Check the Jenkins console for details.""",
-                    to: "pabhipsa02@gmail.com", // Add your recipient email address here
+                    to: "pabhipsa02@gmail.com", 
                     from: "jenkins@yourdomain.com",
                     mimeType: 'text/html'
                 )
             }
         }
+
+        
     }
 }
