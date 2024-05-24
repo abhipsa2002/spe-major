@@ -2,9 +2,10 @@ version: '3.8'
 
 services:
   imagecapdb:
+    container_name: database
     image: mysql
     ports:
-      - "3307:3306"  # Ensure MySQL is accessible on localhost:3306
+      - "3307:3306"  
     environment:
       MYSQL_ROOT_PASSWORD: Abhipsa2002@
       MYSQL_DATABASE: imagecaptioning
@@ -18,6 +19,7 @@ services:
       timeout: 60s
 
   model-service:
+    container_name: model
     image: abhipsapanda/modelbe1
     ports:
       - "8060:8060"
@@ -26,6 +28,7 @@ services:
     restart: on-failure:1
 
   imagecap-service:
+    container_name: backend
     image: abhipsapanda/backend
     ports:
       - "8020:8020"
@@ -49,6 +52,7 @@ services:
     restart: on-failure:1
 
   imagecapapp:
+    container_name: frontend
     image: abhipsapanda/frontend
     ports:
       - "3000:3000"
